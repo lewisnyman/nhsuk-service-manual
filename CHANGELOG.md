@@ -12,6 +12,7 @@
 - Update the guidance on dates in the content style guide
 - Update the entry for the NHS App in the A to Z of NHS health writing
 - Add more links between the A to Z of NHS health writing and the rest of the content style guide
+- Add quotation marks to contractions section in style guide to make it clearer
 
 ## 3.8.0 - 18 December 2020
 
@@ -21,7 +22,6 @@
 
 :wrench: **Fixes**
 
-- Add quotation marks to contractions section in style guide to make it clearer
 - Update typography list to use real examples
 - Remove readability tool page with broken link to SMOG calculator while we consider it further
 
