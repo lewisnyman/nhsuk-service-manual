@@ -193,3 +193,182 @@ h1 + .nhsuk-lede-text {
   }
 }
 
+/* ==========================================================================
+   COMPONENTS/ #FIELDSET
+   ========================================================================== */
+
+/**
+ * 1. Fix legend text wrapping in Edge and IE versions:
+ * 2. IE9-11 & Edge 12-13
+ * 3. and IE8-11
+ * 4. Hack to let legends or elements within legends have margins in webkit browsers.
+ * 5. When the legend contains an H1, we want the H1 to inherit all styles from
+ *    the legend. Effectively we want to be able to treat the heading as if it is
+ *    not there.
+ */
+
+ .nhsuk-fieldset {
+  @include clearfix;
+
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.nhsuk-fieldset__legend {
+  @include nhsuk-font(19);
+
+  box-sizing: border-box; /* 1 */
+  color: $color_nhsuk-black;
+  display: table; /* 2 */
+  margin-bottom: nhsuk-spacing(2);
+  margin-top: 0;
+  max-width: 100%; /* 1 */
+  padding: 0;
+  white-space: normal;    /* 4 */
+}
+
+/* Heading modifiers */
+
+.nhsuk-fieldset__legend--xl {
+  @include nhsuk-font($size: 48, $weight: bold);
+  margin-bottom: nhsuk-spacing(3);
+}
+
+.nhsuk-fieldset__legend--l {
+  @include nhsuk-font($size: 32, $weight: bold);
+  margin-bottom: nhsuk-spacing(3);
+}
+
+.nhsuk-fieldset__legend--m {
+  @include nhsuk-font($size: 24, $weight: bold);
+  margin-bottom: nhsuk-spacing(3);
+}
+
+.nhsuk-fieldset__legend--s {
+  @include nhsuk-font($size: 19, $weight: bold);
+  margin-bottom: nhsuk-spacing(2);
+}
+
+.nhsuk-fieldset__heading { /* 5 */
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+
+
+/* ==========================================================================
+   COMPONENTS/ #HINT
+   ========================================================================== */
+
+   .nhsuk-hint {
+    @include nhsuk-font(19);
+
+    color: $nhsuk-secondary-text-color;
+    display: block;
+    margin-bottom: nhsuk-spacing(3);
+  }
+
+  // Reduces margin-bottom of hint when used after the default label (no class)
+  // or nhsuk-label--s for better vertical alignment.
+
+  // This adjustment will not work when the label is inside the <h1>, however it
+  // is unlikely that the default or nhsuk-label--s class would be used in this
+  // case.
+
+  // This adjustment will not work in browsers that do not support :not().
+  // Users with these browsers will see the default size margin (5px larger).
+
+  .nhsuk-label:not(.nhsuk-label--m):not(.nhsuk-label--l):not(.nhsuk-label--xl) + .nhsuk-hint {
+    margin-bottom: nhsuk-spacing(2);
+  }
+
+  // Reduces margin-bottom of hint when used after the default legend (no class)
+  // or nhsuk-fieldset__legend--s for better vertical alignment.
+
+  // This adjustment will not work when the legend is outside the <h1>, however
+  // it is unlikely that the default or nhsuk-fieldset__legend--s class would be
+  // used in this case.
+
+  // This adjustment will not work in browsers that do not support :not().
+  // Users with these browsers will see the default size margin (5px larger).
+
+  .nhsuk-fieldset__legend:not(.nhsuk-fieldset__legend--m):not(.nhsuk-fieldset__legend--l):not(.nhsuk-fieldset__legend--xl) + .nhsuk-hint {
+    margin-bottom: nhsuk-spacing(2);
+  }
+
+  // Reduces visual spacing of legend when there is a hint
+
+  .nhsuk-fieldset__legend + .nhsuk-hint {
+    margin-top: -(nhsuk-spacing(1));
+  }
+
+  // Reduces visual spacing of label when there is a hint
+
+  .nhsuk-label-wrapper + .nhsuk-hint,
+  .nhsuk-label--xl + .nhsuk-hint,
+  .nhsuk-label--l + .nhsuk-hint,
+  .nhsuk-label--m + .nhsuk-hint,
+  .nhsuk-label--s + .nhsuk-hint {
+    margin-top: -(nhsuk-spacing(1));
+  }
+
+
+/* ==========================================================================
+   COMPONENTS/ #LABEL
+   ========================================================================== */
+
+   .nhsuk-label {
+    @include nhsuk-font(19);
+
+    display: block;
+    margin-bottom: nhsuk-spacing(1);
+  }
+
+  /* Modifiers that make labels look more like their equivalent headings */
+
+  .nhsuk-label--xl {
+    @include nhsuk-typography-responsive(48);
+
+    display: block;
+    font-weight: $nhsuk-font-bold;
+    margin-bottom: nhsuk-spacing(3);
+    margin-top: 0;
+  }
+
+  .nhsuk-label--l {
+    @include nhsuk-typography-responsive(32);
+
+    display: block;
+    font-weight: $nhsuk-font-bold;
+    margin-bottom: nhsuk-spacing(3);
+    margin-top: 0;
+  }
+
+  .nhsuk-label--m {
+    @include nhsuk-typography-responsive(24);
+
+    display: block;
+    font-weight: $nhsuk-font-bold;
+    margin-bottom: nhsuk-spacing(3);
+    margin-top: 0;
+  }
+
+  .nhsuk-label--s {
+    @include nhsuk-typography-responsive(19);
+
+    display: block;
+    font-weight: $nhsuk-font-bold;
+    margin-bottom: nhsuk-spacing(2);
+    margin-top: 0;
+  }
+
+  // When the label is nested inside a heading, override the heading so that it
+  // does not have a margin. Effectively we want to be able to treat the heading
+  // as if it is not there.
+  //
+  // This breaks BEM conventions because it exists as a parent of the 'block',
+  // so we can't really consider an element.
+  .nhsuk-label-wrapper {
+    margin: 0;
+  }
