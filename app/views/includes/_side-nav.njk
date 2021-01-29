@@ -18,6 +18,10 @@
   { title: "Patterns", url: "/design-system/patterns" }
 ] %}
 
+{% set dsGuides = [
+  { title: "Making labels and legends headings", url: "/design-system/labels-legends-headings" }
+] %}
+
 {% set accessibilityEveryone = [
   { title: "What all NHS services need to do about accessibility", url: "/accessibility/what-all-NHS-services-need-to-do" },
   { title: "How to make digital services accessible", url: "/accessibility/how-to-make-digital-services-accessible" },
@@ -160,6 +164,13 @@
     <h2 class="app-side-nav__heading">Design</h2>
     <ul class="nhsuk-list app-side-nav__list">
     {% for item in dsDesign %}
+      <li class="app-side-nav__item{% if item.title == pageTitle %} app-side-nav__item--current{% endif %}"><a class="app-side-nav__link" href="{{ item.url }}">{{ item.title }}</a></li>
+    {% endfor %}
+    </ul>
+
+    <h2 class="app-side-nav__heading">How to guides</h2>
+    <ul class="nhsuk-list app-side-nav__list">
+    {% for item in dsGuides %}
       <li class="app-side-nav__item{% if item.title == pageTitle %} app-side-nav__item--current{% endif %}"><a class="app-side-nav__link" href="{{ item.url }}">{{ item.title }}</a></li>
     {% endfor %}
     </ul>

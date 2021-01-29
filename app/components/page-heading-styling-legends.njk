@@ -1,0 +1,59 @@
+{% from 'input/macro.njk' import input %}
+
+{% from 'checkboxes/macro.njk' import checkboxes %}
+
+{{ checkboxes({
+  idPrefix: "checkbox",
+  name: "checkbox",
+  fieldset: {
+    legend: {
+      text: "nhsuk-fieldset__legend--m",
+      classes: "nhsuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "This example shows a <legend> with the class of nhsuk-fieldset__legend--m."
+  },
+  items: [
+    {
+      value: "checkbox",
+      text: "Checkbox 1"
+    },
+    {
+      value: "checkbox",
+      text: "Checkbox 2"
+    },
+    {
+      value: "checkbox",
+      text: "Checkbox 3"
+    }
+  ]
+}) }}
+
+{{ checkboxes({
+  idPrefix: "checkbox-2",
+  name: "checkbox-2",
+  fieldset: {
+    legend: {
+      text: "nhsuk-fieldset__legend--s",
+      classes: "nhsuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "This example shows a <legend> with the class of nhsuk-fieldset__legend--s."
+  },
+  items: [
+    {
+      value: "checkbox",
+      text: "Checkbox 1"
+    },
+    {
+      value: "checkbox",
+      text: "Checkbox 2"
+    },
+    {
+      value: "checkbox",
+      text: "Checkbox 3"
+    }
+  ]
+}) }}

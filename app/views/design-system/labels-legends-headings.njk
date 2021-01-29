@@ -1,0 +1,61 @@
+{% set pageTitle = "Making labels and legends headings" %}
+{% set pageDescription = "Whenever you design a form, you should start by splitting it across multiple pages with each page containing just one thing." %}
+{% set pageSection = "Design system" %}
+{% set subSection = "Design system" %}
+{% set theme = "How to guides" %}
+{% set dateUpdated = "February 2021" %}
+{% set hideDescription = "true" %}
+
+{% extends "includes/app-layout.njk" %}
+
+{% block breadcrumb %}
+  {% include "design-system/_breadcrumb.njk" %}
+{% endblock %}
+
+{% block bodyContent %}
+
+  <p>Whenever you design a form, you should start by splitting it across multiple pages with each page containing just one thing, for example:</p>
+  <ul>
+    <li>one piece of information you’re telling a user</li>
+    <li>one decision they have to make</li>
+    <li>one question they have to answer</li>
+  </ul>
+  <p>This helps users focus and understand what’s being asked of them.</p>
+  <p>When you’re asking just one question on a page, you can make the question the page’s heading. Your page heading will then most likely be the same as the <code>&lt;label&gt;</code> or <code>&lt;legend&gt;</code> for the input.</p>
+  <p>For example, on a page that only asks users for their postcode, the question ‘What is your postcode’ would be both the page heading and the most logical <code>&lt;label&gt;</code> for your text input.</p>
+  <p>To avoid repetition, one option is to use a visually hidden <code>&lt;label&gt;</code> or <code>&lt;legend&gt;</code>.</p>
+  <p>However, this option only removes visual duplication and will not help users of screen readers. They will still hear both the page heading and the visually hidden <code>&lt;label&gt;</code> or <code>&lt;legend&gt;</code>.</p>
+  <p>To prevent this, set the contents of the <code>&lt;label&gt;</code> or <code>&lt;legend&gt;</code> as the page heading (except if you’re asking more than one question on the page).</p>
+
+  {{ designExample({
+    type: "page-heading-label"
+  }) }}
+
+  <h2 id="labels-as-page-headings">Labels as page headings</h2>
+  <p>To set the contents of a label as the page heading, you need to put the <code>&lt;label&gt;</code> tag inside  the <code>&lt;h1&gt;</code> tag. You can either do this in HTML, or by using the Nunjucks macro and setting <code>isPageHeading: true</code>.</p>
+  <p>You then need to apply classes to the <code>&lt;label&gt;</code> to make it look like a heading.</p>
+
+  {{ designExample({
+    type: "page-heading-legend"
+  }) }}
+
+  <h2 id="legends-as-page-headings">Legends as page headings</h2>
+  <p>To set the contents of a legend as the page heading, you need to put the <code>&lt;legend&gt;</code> tag outside the <code>&lt;h1&gt;</code> tag. You can either do this in HTML, or by using the Nunjucks macro and setting <code>isPageHeading: true</code>.</p>
+  <p>As with labels, you also need to apply classes to the <code>&lt;legend&gt;</code> to make it look like a heading.</p>
+
+  <h2 id="styling-options-for-labels-and-legends">Styling options for labels and legends</h2>
+  <p>Instead of styling them as page headings, you can apply other classes to legends and labels to make them larger and bolder than the default.</p>
+
+  <h3 id="styling-labels">Styling labels</h3>
+
+  {{ designExample({
+    type: "page-heading-styling-labels"
+  }) }}
+
+  <h3 id="styling-legends">Styling legends</h3>
+
+  {{ designExample({
+    type: "page-heading-styling-legends"
+  }) }}
+
+{% endblock %}
