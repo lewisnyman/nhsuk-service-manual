@@ -164,6 +164,18 @@
   { title: "Understanding users mental models", url: "/ia-guidance/understanding-users/understanding-users-mental-models" }
 ] %}
 
+{% set processByScenario = [
+  { title: "Content transformation", url: "/ia-guidance/process-by-scenario/content-transformation" },
+  { title: "Moving content", url: "/ia-guidance/process-by-scenario/moving-content" },
+  { title: "Adding or removing pages", url: "/ia-guidance/process-by-scenario/adding-or-removing-pages" },
+  { title: "Adding or removing an entire section", url: "/ia-guidance/process-by-scenario/adding-or-removing-an-entire-section" },
+  { title: "Adding a transactional service", url: "/ia-guidance/process-by-scenario/adding-a-transactional-service" },
+  { title: "Changing hubs", url: "/ia-guidance/process-by-scenario/changing-hubs" },
+  { title: "Small teams", url: "/ia-guidance/process-by-scenario/small-teams" },
+  { title: "Changing the top level navigation or the footer", url: "/ia-guidance/process-by-scenario/changing-the-top-level-navigation-or-the-footer" },
+  { title: "Short timescale to deliver", url: "/ia-guidance/process-by-scenario/short-timescale-to-deliver" }
+] %}
+
 {% set coreIaProcess = [
   { title: "Understanding", url: "/ia-guidance/core-ia-process/understanding" },
   { title: "Ideation", url: "/ia-guidance/core-ia-process/ideation" },
@@ -420,6 +432,20 @@
     <h2 class="app-side-nav__heading">Core IA process <span class="nhsuk-u-visually-hidden">navigation</span></h2>
     <ul class="nhsuk-list app-side-nav__list">
     {% for item in coreIaProcess %}
+      <li class="app-side-nav__item{% if item.title == pageTitle %} app-side-nav__item--current{% endif %}"><a class="app-side-nav__link" href="{{ item.url }}">{{ item.title }}</a></li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+
+  {%- if subSection == "Process by scenario" %}
+    {{ backLink({
+      "href": "/ia-guidance",
+      "text": "IA guidance",
+      "classes": "app-u-hide-mobile app-side-nav__back nhsuk-u-margin-bottom-4"
+    }) }}
+    <h2 class="app-side-nav__heading">Process by scenario <span class="nhsuk-u-visually-hidden">navigation</span></h2>
+    <ul class="nhsuk-list app-side-nav__list">
+    {% for item in processByScenario %}
       <li class="app-side-nav__item{% if item.title == pageTitle %} app-side-nav__item--current{% endif %}"><a class="app-side-nav__link" href="{{ item.url }}">{{ item.title }}</a></li>
     {% endfor %}
     </ul>
