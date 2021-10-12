@@ -13,92 +13,26 @@
 
 {% block bodyContent %}
 
-  <h2>Step 7: Design options for the user interface (UI)</h2>
-  <h3>UI design and iteration</h3>
-  <p>The sitemap is realised in the form of hub pages, content pages and navigation structures - the UI that supports your topic content.</p>
-  <h4>The navigation system</h4>
-  <p>The IA templates and components are in the service manual under components and page types. They were all designed, tested and iterated mobile-first and have been found to be usable, accessible, robust, flexible and learnable. The page templates and components were designed to work as a coherent whole, not individually in isolation.</p>
-  <p>The components are:</p>
-  <p>LINKS HERE</p>
-  <p>The page types are:</p>
-  <p>LINKS HERE</p>
-  <h4>Sitemap as family tree</h4>
-  <p>We talk about pages higher up in the hierarchy being ‘parents’ of the pages immediately below them. For example, a supermarket may have the following hierarchy:</p>
-  <ul>
-    <li>‘Fresh food’ is the parent page of ‘Fruit’ and ‘Vegetables’</li>
-    <li>‘Vegetables’ is the parent page of ‘Broccoli’, ‘New potatoes’ and ‘Mushrooms’</li>
-    <li>‘Broccoli’, ‘New potatoes’ and ‘Mushrooms’ are child pages of ‘Vegetables’</li>
-    <li>‘Broccoli’, ‘New potatoes’ and ‘Mushrooms’ are sibling pages</li>
-    <li>‘Lemons’, ‘Oranges’ and ‘Grapefruit’ are also sibling pages</li>
-  </ul>
-  <p>This matters when it comes to talking about navigation structures:</p>
-  <ul>
-    <li>A parent page must contain links to all its child pages</li>
-    <li>A child page must provide a link to its parent page</li>
-    <li>A page must provide links to all its siblings</li>
-  </ul>
-  <p>This ensures that no pages are ‘orphaned’ by not being available via navigation. It also ensures that users can always find ‘nearby’ content to continue their journey.</p>
-  <p>Within the navigation system:</p>
-  <ul>
-    <li>Hub pages are ‘parent’ pages. They contain links to all their ‘child’ pages (which can be hub pages and/or content pages)</li>
-    <li>Breadcrumbs on all pages provide links to parent pages. (On mobile, just the immediate parent. On desktop, all grandparents are there too.)</li>
-    <li>Bottom navigation on content pages pages provides links to both parent and sibling pages</li>
-  </ul>
+<h2>Build and publish pages</h2>
+<p>When the team is confident they are solving the IA problems after completing the cycles of iteration and research, it is time to build or make necessary changes to the pages in the content management system (CMS). At NHS.UK, we use Wagtail for our CMS.</p>
+<p>Your team will need to make sure all changes are reflected in the CMS in order to be ready to publish. A team review will also ensure everyone is happy with what is being changed.</p>
+<p>The pages in the CMS should also reflect the page templates you are using for your new IA.</p>
+<h3>Test & deploy</h3>
+<p>Functional tests should be run on your new pages. These will make sure everything is working correctly across different browsers and device types.</p>
+<p>At this stage, you should also consider running some final accessibility tests on your content, such as reading through the page using a screen reader.</p>
+<h3>Set-up re-directs</h3>
+<p>When pages are added, moved or changed you will need to make sure the URL takes the user to the new pages. You can do this by setting up a re-direct.</p>
 
-  <h3>Use IA page templates and components</h3>
-  <h4>Hub pages</h4>
-  <p>Hub pages are designed to do one thing well: to route people to the content they need. Not to provide that content. They provide consistent navigation structures to allow users to browse to their destination, discover content they didn’t know they needed and re-find information without getting lost. Users can scan, select and move on quickly.</p>
-  <ul>
-    <li>They show users where they are and where else they might go</li>
-    <li>They showcase all content for any given topic or sub-topic</li>
-    <li>They allow you to promote up to three ‘top tasks’ for your topic, to provide shortcuts to popular content that would otherwise be ‘buried’ in your site map hierarchy</li>
-    <li>They showcase related links for any given topic or sub-topic - content that users interested in your topic may find useful, but isn’t contained within your content. For example, treatments for a condition or services associated with a healthy living topic.</li>
-  </ul>
-  <p>Each ‘parent’ page in your site map represents a ‘hub’ page in your prototype. Your hub page will list all the child pages of the parent page. These child pages can be a mix of further hubs and/or content pages. We call these ‘canonical’ links, as they represent the single home of any one piece of content. This is in contrast to related links, which reference related content elsewhere in the sitemap.</p>
-  <p>There are two different hub page templates - the main topic hub and the sub topic hub. This allows the design to change as users move through the content. (Helping users understand they’ve ‘moved’).</p>
-  <p>Main topic hubs are used for larger groups of content, for example a group of conditions like Diabetes or a group of medicines like Antihistamines. Individual conditions or medicines are served by sub topic hubs.</p>
-  <h5>Level 1 Hub</h5>
-  <p>Use for larger groups of content.</p>
-  <p>Components:</p>
-  <ul>
-    <li>Breadcrumbs (link to parent pages)</li>
-    <li>Page title and intro text (to help users to ascertain if they are in the right place)</li>
-    <li>‘Top tasks’ (optional links to up to 3 pages that are high priority tasks for users. They must be grandchild or great-grandchild links from within the topic, not related links from elsewhere)</li>
-    <li>Canon links (to all child pages, including intro text to help users choose)</li>
-    <li>Related links</li>
-    <li>External links - to related content elsewhere on the internet</li>
-  </ul>
-  <h5>Level 2 hub</h5>
-  <p>Use for smaller groups of content such as sub-topics under a main topic hub.</p>
-  <p>Components:</p>
-  <ul>
-    <li>Breadcrumbs (link to parent pages)</li>
-    <li>Page title and optional intro text (to help users to ascertain if they are in the right place)</li>
-    <li>Canon links (to all child pages)</li>
-    <li>Related links</li>
-    <li>External links - to related content elsewhere on the internet</li>
-  </ul>
-  <h5>Content pages</h5>
-  <p>Our content pages are designed to:</p>
-  <ul>
-    <li>Allow users to ascertain if they are in the right place, and correct themselves if not</li>
-    <li>Read the content</li>   
-    <li>Facilitate the discovery of additional content within the topic</li>
-    <li>Ensure there are no ‘dead ends’ if they want to continue their journey</li>
-  </ul>
-  <p>Very long pages are bad for accessibility.</p>
-  <p>Components:</p>
-  <ul>
-    <li>Breadcrumbs (link to parent pages)</li>
-    <li>Page title (to help users to ascertain if they are in the right place)</li>
-    <li>Sideways navigation (to link to the parent page and all sibling pages)</li>
-  </ul>
-  <h4>Test and iterate</h4>
-  <p>Your researcher can run first-click tests and usability tests to evaluate your prototype.</p>
-  <ul>
-    <li>First-click tests are run remotely to test the IA and visual hierarchy together. Your IA may work well in tree tests, but can people still find what they need in the context of the rest of the website? First-click tests show users an image of your hub page and ask them where they would click to complete common tasks.</li>
-    <li>You can run usability tests that evaluate whether users are able to find your content and move around it, as well as whether the content itself meets user needs. You can evaluate your new hubs and content pages against the site-wide user needs.</li>
-  </ul>
+<h2>Document what you have learned</h2>
+<p>As you are reaching the end of the IA improvement work, your team should consider holding a form of retro to understand what you have learned from the work.</p>
+<p>Typical retros ask 3 questions:</p>
+<ul>
+  <li>What went well?</li>
+  <li>What didn't go well?</li>
+  <li>What could be improved?</li>
+</ul>
+<p>Answering these questions as a team will help to highlight any parts of the process that can be maintained, and any that should be improved for future IA projects. It is important to then document the outcomes so that you have something to refer back to, and evidence of any decisions made.</p>
+<p>It may be useful at this stage to share any key learnings with other teams that may be interested, such as those working on similar projects.</p>
 
 
 {% endblock %}
