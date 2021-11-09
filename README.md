@@ -24,7 +24,7 @@ Run the project in development mode `npm run watch` and visit <a href="http://lo
 - [Staging](https://nhsuk-service-manual-dev-uks.azurewebsites.net/) - code pushed to the `master` branch will deploy to the Staging environment
 - [Live](https://service-manual.nhs.uk/) - git tags created using SEMVER format `v0.0.0` will deploy to the Live environment. (Note: Live is behind a server side cache which results in changes not appearing immediately.)
 
-### Release to live 
+### Release to live
 
 1. Visit the [GitHub releases page](https://github.com/nhsuk/nhsuk-service-manual/releases) and [draft a new release](https://github.com/nhsuk/nhsuk-service-manual/releases/new).
 2. Enter the tag version, using the same version as in the [CHANGELOG](https://github.com/nhsuk/nhsuk-service-manual/blob/master/CHANGELOG.md) and [package.json](https://github.com/nhsuk/nhsuk-service-manual/blob/master/package.json#L3) files, prefixed with a `v`. For example `v13.15.1`.
